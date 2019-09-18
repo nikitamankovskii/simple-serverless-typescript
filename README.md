@@ -1,1 +1,1 @@
-simple serverless typescript
+simple serverless typescript example
