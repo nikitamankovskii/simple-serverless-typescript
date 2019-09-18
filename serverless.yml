@@ -1,0 +1,31 @@
+service:
+  name: serverless
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+functions:
+  hello:
+    handler: handler.func1
+    events:
+      - http:
+          method: post
+          path: func
+  hello:
+    handler: handler.func2
+    events:
+      - http:
+          method: get
+          path: func/{id}
+          request:
+            parameters:
+              paths:
+                id: true
